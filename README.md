@@ -25,5 +25,3 @@ yarn start
 ```
 
 Open [http://localhost:8081](http://localhost:8081) to view it in the browser.
-
-In this configuration the page will reload if you make edits.
