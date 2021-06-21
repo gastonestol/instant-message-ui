@@ -17,9 +17,16 @@ const Chat = () => {
 
   const limit = 10;
 
+  setInterval(() => {
+    refreshMessageList();
+  }, 10000);
 
   useEffect(() => {
     console.log("current list: ",messages);
+    refreshMessageList();
+  }, [messages]);
+
+  const refreshMessageList = () => {
     if(messages.length<=0){
       MessageService.getMessages(start,limit).then(
         (response) => {
@@ -41,7 +48,7 @@ const Chat = () => {
         }
       );
     }
-  }, [messages]);
+  }
 
   if (!currentUser) {
     return <Redirect to="/login" />;
