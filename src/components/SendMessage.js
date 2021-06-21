@@ -87,13 +87,11 @@ const SendMessage = (props) => {
                 <select 
                   class="custom-select custom-select-sm"
                   name="type"
-                  value={type}
                   onChange={onChangeType}
                 >
-                  <option selected disabled >Type</option>
-                  <option value="1">text</option>
-                  <option value="2">image</option>
-                  <option value="3">video</option>
+                  <option value="text">Text</option>
+                  <option value="image">Image</option>
+                  <option value="video">Video</option>
                 </select>
               </div>
               <div class="col-auto my-1">

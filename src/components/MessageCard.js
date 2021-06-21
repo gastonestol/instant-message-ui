@@ -47,7 +47,6 @@ const MessageCard = (props) => {
     
     return (
         <header className="jumbotron">
-          <h5>MessagId: {props.message.id}</h5>
           <h5>User: {props.message.senderUserName}</h5>
           <h5>Message: {props.message.content}</h5>
           <h5>Type: {props.message.contentType} </h5>
@@ -70,13 +69,11 @@ const MessageCard = (props) => {
                 <select 
                   class="custom-select custom-select-sm"
                   name="type"
-                  value={type}
                   onChange={onChangeType}
                 >
-                  <option selected disabled >Type</option>
-                  <option value="1">text</option>
-                  <option value="2">image</option>
-                  <option value="3">video</option>
+                  <option value="text">Text</option>
+                  <option value="image">Image</option>
+                  <option value="video">Video</option>
                 </select>
               </div>
               <div class="col-auto my-1">
