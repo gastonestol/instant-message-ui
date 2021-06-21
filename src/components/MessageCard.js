@@ -38,7 +38,11 @@ const MessageCard = (props) => {
           const updatedList = props.messagesList.filter( (messageItem) => messageItem.id !== props.message.id);
           console.log("new list: ",updatedList);
           props.update(updatedList);
-          setSuccessful(true);
+          MessageService.updateMessage(props.message.id).then(() => {
+            setSuccessful(true);
+          }).catch(() => {
+            setSuccessful(false);
+          });
         })
         .catch(() => {
           setSuccessful(false);

@@ -20,6 +20,18 @@ const sendMessage = (recipient, type, content) => {
   );
 };
 
+const updateMessage = (id) => {
+  return axios
+    .put(API_URL + "messages", { 
+      id
+    },
+    { 
+      headers: authHeader(),
+      withCredentials: false 
+    }
+  );
+};
+
 const getMessages = (start,limit) => {
   return axios.get(API_URL + "messages", { 
     params: { 
@@ -36,4 +48,5 @@ const getMessages = (start,limit) => {
 export default {
   getMessages,
   sendMessage,
+  updateMessage,
 };
